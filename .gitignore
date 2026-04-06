@@ -1,0 +1,24 @@
+# Credenciais — nunca commitar
+iq-trading-bot/config.yaml
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Dados gerados (banco SQLite e imagens de candles)
+iq-trading-bot/data/candles/*.db
+iq-trading-bot/data/images/
+
+# Pesos de modelos treinados
+iq-trading-bot/models/cnn/
+iq-trading-bot/models/rl/
+
+# Misc
+*.log
+.DS_Store
+Thumbs.db

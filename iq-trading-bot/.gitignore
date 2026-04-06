@@ -1,0 +1,20 @@
+# Credenciais — nunca commitar
+config.yaml
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Dados gerados (banco e imagens)
+data/candles/*.db
+data/images/
+
+# Pesos de modelos treinados
+models/cnn/
+models/rl/
+
+# Misc
+*.log
+.DS_Store

@@ -1,0 +1,9 @@
+iqoptionapi
+stable-baselines3
+torch
+mplfinance
+pandas-ta
+python-dotenv
+pyyaml
+gymnasium
+sqlalchemy
