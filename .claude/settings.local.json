@@ -1,0 +1,27 @@
+{
+  "env":
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Miguel/Desktop/ProjectClaude/**)",
+      "Bash(git -C \"C:/Users/Miguel/Desktop/Projeto IQ option/\" show --stat HEAD)",
+      "Bash(pip uninstall:*)",
+      "Bash(pip install:*)",
+      "Bash(mkdir:*)",
+      "Bash(python -c ':*)",
+      "Bash(python tests/test_phase2.py)",
+      "Bash(xxd)",
+      "Bash(cat \"C:/Users/Miguel/Desktop/Projeto IQ option/iq-trading-bot/src/data/\"*)",
+      "Bash(python -c \"from src.patterns.detector import detect; import pandas as pd, numpy as np; print\\('import OK'\\)\")",
+      "Bash(python tests/test_phase3a.py)",
+      "Bash(gh repo:*)",
+      "Bash(git -C \"C:/Users/Miguel/Desktop/Projeto IQ option\" rev-parse --show-toplevel)",
+      "Bash(git -C \"C:/Users/Miguel/Desktop/Projeto IQ option\" rev-parse --git-dir)",
+      "Bash(rm -rf \"C:/Users/Miguel/Desktop/Projeto IQ option/iq-trading-bot/.git\")",
+      "Bash(git init:*)",
+      "Bash(python tests/test_phase3b.py)",
+      "Bash(pip show:*)",
+      "Bash(python scripts/build_dataset.py --step 5 --help)",
+      "Bash(python scripts/build_dataset.py --step 10 --images-dir data/images/test_build --labels-csv data/images/test_labels.csv)"
+    ]
+  }
+}

@@ -73,7 +73,57 @@ iq-trading-bot/
 python src/main.py
 ```
 
+## Regras de Economia de Tokens
+- NUNCA repetir código já existente — referenciar pelo caminho e linha
+- SEMPRE referenciar arquivos pelo caminho (`src/data/labeler.py:42`) ao invés de copiar conteúdo
+- Comentários curtos e objetivos — sem explicar o óbvio
+- Sem docstrings longas — uma linha basta se o nome já é descritivo
+- Preferir edições cirúrgicas (Edit) a reescritas completas (Write)
+- NUNCA mostrar o arquivo inteiro se só uma parte mudou
+
 ## Métricas Mínimas para Conta Real
 - Taxa de acerto >= 65%
 - Drawdown máximo <= 15%
 - Mínimo 1000 trades demo avaliados
+
+@CONTEXT.md
+
+# Regras de Orquestração do Time
+
+## Agentes disponíveis
+- backend-engineer → APIs, banco de dados, autenticação
+- ux-designer → interfaces, fluxos, prototipagem
+- ai-specialist → LLMs, RAG, integração de IA
+- frontend-engineer → React, componentes, estado
+- qa-engineer → testes, validação, cobertura
+
+## Quando rodar em PARALELO
+Dispare múltiplos agentes ao mesmo tempo quando:
+- As tarefas são independentes (sem shared state)
+- Pertencem a domínios separados (UI, backend, testes)
+- Têm arquivos claramente distintos
+
+Exemplo:
+→ Backend criando API + UX Designer criando protótipo = PARALELO
+
+## Quando rodar em SEQUÊNCIA
+Rode um depois do outro quando:
+- A tarefa B depende do output da tarefa A
+- Compartilham os mesmos arquivos (risco de conflito)
+- O escopo está indefinido (entender antes de agir)
+
+Exemplo:
+→ UX Designer define fluxo → Backend cria a API necessária = SEQUÊNCIA
+
+## Invocação obrigatória de agentes
+Sempre que um agente for invocado, forneça no prompt:
+1. Contexto: o que já foi feito no projeto
+2. Escopo: exatamente o que este agente deve fazer
+3. Arquivos: quais arquivos ler/criar/modificar
+4. Entregável: o que deve estar no progress.md ao terminar
+
+## Ao terminar cada tarefa
+Todo agente deve atualizar o progress.md com:
+- O que foi feito
+- Quais arquivos foram criados/modificados
+- Qual agente deve agir a seguir (se houver)
